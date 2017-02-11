@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?><Diagram version="1.0" type="POSTGRES" versionMajor="9" versionMinor="5" groupSchema="false" hide_inv="false">
+<Table id="0" name="Item" schema="public" database="Agralogics" background="16777165">
+<Column id="1" name="id" type="integer" length="0" nulls="false"/>
+<Column id="2" name="create_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="3" name="update_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="4" name="order_id" type="integer" length="0" nulls="true"/>
+<Column id="5" name="variant_id" type="integer" length="0" nulls="true"/>
+<Column id="6" name="sale_price" type="numeric" length="0" nulls="false">
+<CP name="PRECISION">4</CP>
+<CP name="SCALE">2</CP>
+</Column>
+<Column id="7" name="quantity_ordered" type="varchar" length="0" nulls="true"/>
+<Column id="8" name="quantitity_oversold" type="varchar" length="0" nulls="true"/>
+</Table>
+<Table id="9" name="Order" schema="public" database="Agralogics" background="16777165">
+<Column id="10" name="id" type="integer" length="0" nulls="false"/>
+<Column id="11" name="create_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="12" name="update_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="13" name="status" type="varchar" length="50" nulls="true"/>
+<Column id="14" name="user_id" type="integer" length="0" nulls="false"/>
+<Column id="15" name="charge_amount" type="numeric" length="0" nulls="false">
+<CP name="PRECISION">4</CP>
+<CP name="SCALE">2</CP>
+</Column>
+<Column id="16" name="tax_amount" type="numeric" length="0" nulls="false">
+<CP name="PRECISION">4</CP>
+<CP name="SCALE">2</CP>
+</Column>
+<Column id="17" name="coupon_amount" type="numeric" length="0" nulls="true">
+<CP name="PRECISION">4</CP>
+<CP name="SCALE">2</CP>
+</Column>
+</Table>
+<Table id="18" name="Product" schema="public" database="Agralogics" background="16777165">
+<Column id="19" name="id" type="integer" length="0" nulls="false"/>
+<Column id="20" name="create_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="21" name="update_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="22" name="description" type="varchar" length="0" nulls="true"/>
+<Column id="23" name="msrp" type="numeric" length="0" nulls="true">
+<CP name="PRECISION">4</CP>
+<CP name="SCALE">2</CP>
+</Column>
+</Table>
+<Table id="24" name="Returns" schema="public" database="Agralogics" background="16777165">
+<Column id="25" name="id" type="integer" length="0" nulls="false"/>
+<Column id="26" name="item_id" type="integer" length="0" nulls="true"/>
+<Column id="27" name="create_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="28" name="update_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="29" name="return_reason" type="varchar" length="50" nulls="true"/>
+<Column id="30" name="approval_flag" type="varchar" length="50" nulls="true"/>
+<Column id="31" name="amount_refunded" type="numeric" length="0" nulls="false">
+<CP name="PRECISION">4</CP>
+<CP name="SCALE">2</CP>
+</Column>
+<Column id="32" name="admin_name" type="varchar" length="50" nulls="true"/>
+</Table>
+<Table id="33" name="Shipment" schema="public" database="Agralogics" background="16777165">
+<Column id="34" name="id" type="integer" length="0" nulls="false"/>
+<Column id="35" name="order_id" type="integer" length="0" nulls="false"/>
+<Column id="36" name="start_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="37" name="finish_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="38" name="num_packages" type="varchar" length="50" nulls="true"/>
+<Column id="39" name="shipping_charge" type="numeric" length="0" nulls="true">
+<CP name="PRECISION">4</CP>
+<CP name="SCALE">2</CP>
+</Column>
+<Column id="40" name="is_gift" type="varchar" length="50" nulls="true"/>
+<Column id="41" name="shipping_adddress" type="varchar" length="100" nulls="true"/>
+<Column id="42" name="recipient_name" type="varchar" length="100" nulls="true"/>
+</Table>
+<Table id="43" name="Users" schema="public" database="Agralogics" background="16777165">
+<Column id="44" name="id" type="integer" length="0" nulls="false"/>
+<Column id="45" name="create_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="46" name="update_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="47" name="first_name" type="varchar" length="50" nulls="true"/>
+<Column id="48" name="last_name" type="varchar" length="50" nulls="true"/>
+<Column id="49" name="address" type="varchar" length="100" nulls="true"/>
+<Column id="50" name="vip_flag" type="varchar" length="50" nulls="true"/>
+<Column id="51" name="last_purchase" type="varchar" length="0" nulls="true"/>
+</Table>
+<Table id="52" name="Variant" schema="public" database="Agralogics" background="16777165">
+<Column id="53" name="id" type="integer" length="0" nulls="false"/>
+<Column id="54" name="create_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="55" name="update_date_time" type="varchar" length="0" nulls="false"/>
+<Column id="56" name="product_id" type="integer" length="0" nulls="false"/>
+<Column id="57" name="cost" type="numeric" length="0" nulls="true">
+<CP name="PRECISION">4</CP>
+<CP name="SCALE">2</CP>
+</Column>
+<Column id="58" name="size" type="varchar" length="100" nulls="true"/>
+</Table>
+<Relation id="59" name="REL_1" cardinality="-2" identifying="false" nulls="false">
+<FK>10</FK>
+<PK>19</PK>
+<Text/>
+</Relation>
+<Relation id="60" name="REL_2" cardinality="-2" identifying="false" nulls="false">
+<FK>44</FK>
+<PK>10</PK>
+<Text/>
+</Relation>
+<Relation id="61" name="REL_3" cardinality="-2" identifying="false" nulls="false">
+<FK>45</FK>
+<PK>2</PK>
+<Text/>
+</Relation>
+<Relation id="62" name="REL_4" cardinality="-2" identifying="false" nulls="false">
+<FK>46</FK>
+<PK>3</PK>
+<Text/>
+</Relation>
+<Relation id="63" name="REL_5" cardinality="-2" identifying="false" nulls="false">
+<FK>51</FK>
+<PK>1</PK>
+<Text/>
+</Relation>
+<Relation id="64" name="REL_6" cardinality="-2" identifying="false" nulls="false">
+<FK>19</FK>
+<PK>25</PK>
+<PK>26</PK>
+<Text/>
+</Relation>
+<Relation id="65" name="REL_7" cardinality="-2" identifying="true" nulls="false">
+<FK>1</FK>
+<PK>25</PK>
+<PK>26</PK>
+<Text/>
+</Relation>
+<Relation id="66" name="REL_8" cardinality="-2" identifying="false" nulls="false">
+<FK>44</FK>
+<PK>42</PK>
+<PK>34</PK>
+<PK>35</PK>
+<PK>36</PK>
+<PK>37</PK>
+<Text/>
+</Relation>
+<Relation id="67" name="REL_9" cardinality="-2" identifying="true" nulls="false">
+<FK>32</FK>
+<PK>44</PK>
+<Text/>
+</Relation>
+<Relation id="68" name="REL_10" cardinality="-2" identifying="false" nulls="false">
+<FK>56</FK>
+<FK>57</FK>
+<FK>58</FK>
+<PK>19</PK>
+<PK>22</PK>
+<PK>23</PK>
+<Text/>
+</Relation>
+<Relation id="69" name="REL_11" cardinality="-2" identifying="false" nulls="false">
+<FK>34</FK>
+<FK>35</FK>
+<FK>38</FK>
+<FK>42</FK>
+<PK>25</PK>
+<PK>26</PK>
+<PK>32</PK>
+<PK>29</PK>
+<Text>In shipment and return we need to know the item returend ad then update the product.</Text>
+</Relation>
+<Relation id="70" name="REL_12" cardinality="-2" identifying="true" nulls="false">
+<Option name="deferrable" class="Boolean" value="false"/>
+<FK>14</FK>
+<PK>7</PK>
+<Text>One Customer can order multiple item</Text>
+</Relation>
+<Relation id="71" name="REL_13" cardinality="-2" identifying="true" nulls="false">
+<FK>1</FK>
+<FK>2</FK>
+<FK>3</FK>
+<PK>36</PK>
+<PK>37</PK>
+<PK>39</PK>
+<PK>42</PK>
+<Text/>
+</Relation>
+<Constraint table="0" name="Item_pkey" type="PrimKey">
+<Option name="tablespace" class="String" value="&lt;DEFAULT&gt;"/>
+<ConstraintColumn id="1"/>
+</Constraint>
+<Constraint table="9" name="Order_pkey" type="PrimKey">
+<Option name="tablespace" class="String" value="&lt;DEFAULT&gt;"/>
+<ConstraintColumn id="10"/>
+</Constraint>
+<Constraint table="18" name="Product_pkey" type="PrimKey">
+<Option name="tablespace" class="String" value="&lt;DEFAULT&gt;"/>
+<ConstraintColumn id="19"/>
+</Constraint>
+<Constraint table="24" name="Returns_pkey" type="PrimKey">
+<Option name="tablespace" class="String" value="&lt;DEFAULT&gt;"/>
+<ConstraintColumn id="25"/>
+</Constraint>
+<Constraint table="33" name="Shipment_pkey" type="PrimKey">
+<Option name="tablespace" class="String" value="&lt;DEFAULT&gt;"/>
+<ConstraintColumn id="34"/>
+</Constraint>
+<Constraint table="43" name="Users_pkey" type="PrimKey">
+<Option name="tablespace" class="String" value="&lt;DEFAULT&gt;"/>
+<ConstraintColumn id="44"/>
+</Constraint>
+<Constraint table="43" name="UNIQUE_Users_1" type="Unique">
+<ConstraintColumn id="49"/>
+<ConstraintColumn id="51"/>
+</Constraint>
+<Constraint table="52" name="Variant_pkey" type="PrimKey">
+<Option name="tablespace" class="String" value="&lt;DEFAULT&gt;"/>
+<ConstraintColumn id="53"/>
+</Constraint>
+<Sheet name="Agralogics" id="72" disp_at="true" disp_ph="true" disp_rn="true" disp_null="true">
+<Place id="64" visible="true">500,0,0,0</Place>
+<Place id="0" visible="true">349,0,170,181</Place>
+<Place id="69" visible="true">500,0,0,0</Place>
+<Place id="62" visible="true" options="650.5958877053939,529.0883117545686,190.0,191.0,349.3826842697971,-0.31580054003786984,170.0,181.0,6,750.0,529.0883117545686,750.0,230.0,475.0,230.0,475.0,310.1949134723667,440.0,310.1949134723667,440.0,180.68419945996214">500,0,0,0</Place>
+<Place id="70" visible="true">500,0,0,0</Place>
+<Place id="33" visible="true">600,17,240,210</Place>
+<Place id="67" visible="true">500,0,0,0</Place>
+<Place id="43" visible="true">650,529,190,191</Place>
+<Place id="63" visible="true">500,0,0,0</Place>
+<Place id="71" visible="true">500,0,0,0</Place>
+<Place id="24" visible="true">40,510,211,191</Place>
+<Place id="60" visible="true" options="650.5958877053939,529.0883117545686,190.0,191.0,38.772511214530624,48.772511214530624,200.0,171.0,5,650.5958877053939,630.0,390.0,630.0,390.0,483.0,170.0,483.0,170.0,219.77251121453062">500,0,0,0</Place>
+<Place id="68" visible="true">500,0,0,0</Place>
+<Place id="52" visible="true">911,59,190,171</Place>
+<Place id="9" visible="true">38,48,200,171</Place>
+<Place id="66" visible="true">500,0,0,0</Place>
+<Place id="18" visible="true">850,399,190,141</Place>
+<Place id="65" visible="true">500,0,0,0</Place>
+<Place id="59" visible="true">500,0,0,0</Place>
+<Place id="61" visible="true">500,0,0,0</Place>
+</Sheet>
+<Settings sheet="72" zoom="0.7071067811865477"/>
+</Diagram>
